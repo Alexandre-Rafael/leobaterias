@@ -432,16 +432,26 @@
     .hero-img-mobile{
       display:block;
       width:100%;
-      height:320px;
+      height:420px;
       flex-shrink:0;
       overflow:hidden;
+      position:relative;
+    }
+    .hero-img-mobile::before{
+      content:"";
+      position:absolute;
+      top:0;left:0;right:0;
+      height:80px;
+      background:linear-gradient(to bottom,rgba(0,0,0,.8),transparent);
+      z-index:1;
+      pointer-events:none;
     }
     .hero-img-mobile img{
       display:block;
       width:100%;
       height:100%;
       object-fit:cover;
-      object-position:center bottom;
+      object-position:center top;
     }
 
     .hero h1{font-size:38px;line-height:1.05}

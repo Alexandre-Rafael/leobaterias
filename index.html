@@ -89,6 +89,7 @@
     min-height:580px;
   }
   .hero-copy{max-width:600px;margin-top:-40px}
+  .hero-logo{height:120px;width:auto;margin-bottom:24px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.5))}
   .hero-img-mobile{display:none}
   .eyebrow{
     display:inline-flex;align-items:center;gap:10px;
@@ -405,18 +406,18 @@
       opacity:.7;
     }
 
-    /* wrap sem padding — imagem full-bleed */
+    /* wrap sem padding lateral — imagem full-bleed */
     .hero .wrap{padding:0}
+    .hero-copy{padding-top:24px}
 
-    /* nav com padding próprio */
-    .hero .nav{padding:14px 20px}
+    .hero-logo{height:80px;margin-bottom:18px}
 
     /* grid: coluna, conteúdo no topo, imagem embaixo */
     .hero-grid{
       display:flex;
       flex-direction:column;
       gap:0;
-      padding:0;
+      padding:60px 0 140px;
     }
 
     /* área de conteúdo */
@@ -510,18 +511,9 @@
 <!-- ───────── HERO ───────── -->
 <section class="hero" data-screen-label="hero">
   <div class="wrap">
-    <header class="nav">
-      <div class="logo">
-        <img src="assets/leo-baterias-logo.png" alt="Leo Baterias" />
-      </div>
-      <div class="meta">
-        <span class="dot"></span>
-        Atendimento agora · Domingo a Domingo
-      </div>
-    </header>
-
     <div class="hero-grid">
       <div class="hero-copy">
+        <img class="hero-logo" src="assets/leo-baterias-logo.png" alt="Leo Baterias" />
         <span class="eyebrow"><span class="spark"></span> Pagamento em 10× sem juros</span>
         <h1>
           Trocamos a bateria<br />

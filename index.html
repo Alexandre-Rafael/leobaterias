@@ -87,6 +87,7 @@
     padding:70px 0 100px;
   }
   .hero-copy{max-width:600px}
+  .hero-img-mobile{display:none}
   .eyebrow{
     display:inline-flex;align-items:center;gap:10px;
     background:rgba(31,203,79,.12);
@@ -374,16 +375,6 @@
 
   /* responsive */
   @media (max-width:980px){
-    .hero{
-      background:
-        linear-gradient(180deg, rgba(10,13,11,.75) 0%, rgba(10,13,11,.55) 45%, rgba(10,13,11,.82) 100%),
-        radial-gradient(600px 400px at 50% 0%, rgba(31,203,79,.14), transparent 60%),
-        url('assets/bgmobile.png') center center / cover no-repeat,
-        #0a0d0b;
-      min-height:auto;
-    }
-    .hero-grid{padding:48px 0 72px}
-    .hero-copy{max-width:100%}
     .cards{grid-template-columns:1fr}
     .brands-row{grid-template-columns:repeat(2,1fr) !important}
     .about-grid{grid-template-columns:1fr;gap:36px}
@@ -391,19 +382,67 @@
     .nav .meta{display:none}
     .nav .logo img{height:110px}
   }
-  @media (max-width:640px){
-    .wrap{padding:0 18px}
-    .nav .logo img{height:88px}
-    .hero h1{font-size:44px}
-    .hero p.lead{font-size:16px}
-    .cta-row{flex-direction:column}
+
+  /* ── mobile hero: imagem separada + conteúdo abaixo ── */
+  @media (max-width:768px){
+    /* hero vira fundo escuro limpo */
+    .hero{
+      background:#050505;
+      min-height:auto;
+    }
+    /* remove grid tecnológico e brilhos */
+    .hero::before{display:none}
+
+    /* wrap sem padding para imagem full-bleed */
+    .hero .wrap{padding:0}
+
+    /* nav com padding próprio */
+    .hero .nav{padding:14px 20px}
+
+    /* grid vira coluna */
+    .hero-grid{
+      display:flex;
+      flex-direction:column;
+      gap:0;
+      padding:0;
+    }
+
+    /* imagem hero full-bleed */
+    .hero-img-mobile{
+      display:block;
+      width:100%;
+      height:320px;
+      background:url('assets/bgmobile.png') center top / cover no-repeat;
+      flex-shrink:0;
+    }
+
+    /* conteúdo sobrepõe levemente a imagem */
+    .hero-copy{
+      background:#050505;
+      padding:28px 20px 48px;
+      margin-top:-24px;
+      border-radius:24px 24px 0 0;
+      position:relative;
+      z-index:2;
+      max-width:100%;
+    }
+
+    .hero h1{font-size:38px;line-height:1.05}
+    .hero p.lead{font-size:15px;color:#bdc6b8;max-width:100%}
+    .cta-row{flex-direction:column;gap:10px}
     .cta-row .btn{width:100%;justify-content:center}
     .badges{gap:8px}
     .badge{font-size:12px;padding:6px 10px}
-    .benefits{padding:64px 0 72px}
-    .brands{padding:64px 0 72px}
-    .about{padding:64px 0 72px}
-    .reviews{padding:64px 0 72px}
+    .eyebrow{font-size:12px}
+  }
+
+  @media (max-width:640px){
+    .wrap{padding:0 18px}
+    .nav .logo img{height:88px}
+    .benefits{padding:56px 0 64px}
+    .brands{padding:56px 0 64px}
+    .about{padding:56px 0 64px}
+    .reviews{padding:56px 0 64px}
     .section-head{margin-bottom:36px}
     .section-head h2{font-size:clamp(28px,7vw,42px)}
     .about h2{font-size:clamp(28px,7vw,42px)}
@@ -413,9 +452,9 @@
     .map-card .pin{width:30px;height:30px;flex:0 0 30px}
   }
   @media (max-width:400px){
-    .wrap{padding:0 14px}
+    .hero-img-mobile{height:260px}
+    .hero h1{font-size:32px}
     .nav .logo img{height:74px}
-    .hero h1{font-size:36px}
     .floats{right:12px;bottom:12px}
     .float-btn{width:50px;height:50px}
   }
@@ -444,6 +483,7 @@
     </header>
 
     <div class="hero-grid">
+      <div class="hero-img-mobile" aria-hidden="true"></div>
       <div class="hero-copy">
         <span class="eyebrow"><span class="spark"></span> Pagamento em 10× sem juros</span>
         <h1>

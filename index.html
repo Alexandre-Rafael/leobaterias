@@ -432,11 +432,12 @@
     .hero-img-mobile{
       display:block;
       width:100%;
-      height:300px;
-      background:url('assets/bgmobile.png') center center / cover no-repeat;
+      height:240px;
+      background:url('assets/bgmobile.png') center center / contain no-repeat;
+      background-color:#050505;
       flex-shrink:0;
-      -webkit-mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.6) 18%, #000 45%);
-      mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.6) 18%, #000 45%);
+      -webkit-mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.5) 12%, #000 35%);
+      mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.5) 12%, #000 35%);
     }
 
     .hero h1{font-size:38px;line-height:1.05}
@@ -498,15 +499,10 @@
       <div class="hero-copy">
         <span class="eyebrow"><span class="spark"></span> Pagamento em 10× sem juros</span>
         <h1>
-          Bateria nova<br />
-          em <span class="accent">10 minutos</span>,<br />
-          onde você estiver.
+          Trocamos a bateria<br />
+          do seu carro<br />
+          em até <span class="accent">10 minutos.</span>
         </h1>
-        <p class="lead">
-          Diagnóstico gratuito, instalação no local e garantia de 12 meses.
-          Para carros, motos, caminhonetes e utilitários — em Frutal/MG e região.
-        </p>
-
         <div class="badges">
           <span class="badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -515,10 +511,6 @@
           <span class="badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             Atendimento em 10 min
-          </span>
-          <span class="badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Teste grátis
           </span>
         </div>
 
@@ -529,7 +521,7 @@
           </a>
           <a class="btn btn-call" href="tel:+5534999604499">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.94.36 1.86.7 2.74a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.34-1.34a2 2 0 0 1 2.11-.45c.88.34 1.8.57 2.74.7A2 2 0 0 1 22 16.92Z"/></svg>
-            (34) 99960-4499
+            Ligar agora
           </a>
         </div>
       </div>
@@ -561,21 +553,18 @@
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62L18.3 8.38a1 1 0 0 0-.78-.38H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
         </div>
         <h3>Entrega em até 10 min</h3>
-        <p>Atendimento móvel rápido: chegamos com a bateria nova e instalamos no local — sem você sair do lugar.</p>
       </div>
       <div class="card reveal">
         <div class="ico">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/><line x1="6" y1="15" x2="10" y2="15"/></svg>
         </div>
         <h3>Parcelamos em 10× sem juros</h3>
-        <p>Aceitamos todos os cartões, Pix e dinheiro. Bateria boa não precisa custar caro — e ainda dá para parcelar.</p>
       </div>
       <div class="card reveal">
         <div class="ico">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
         </div>
         <h3>As melhores marcas</h3>
-        <p>Trabalhamos apenas com baterias homologadas — Moura, Heliar, ACDelco, Bosch — com garantia de fábrica.</p>
       </div>
     </div>
 

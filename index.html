@@ -383,23 +383,33 @@
     .nav .logo img{height:110px}
   }
 
-  /* ── mobile hero: imagem separada + conteúdo abaixo ── */
+  /* ── mobile hero: conteúdo no topo, imagem abaixo ── */
   @media (max-width:768px){
-    /* hero vira fundo escuro limpo */
+    /* fundo escuro + glow verde sutil nas laterais */
     .hero{
-      background:#050505;
+      background:
+        radial-gradient(280px 480px at 0% 50%, rgba(31,203,79,.07), transparent 65%),
+        radial-gradient(280px 480px at 100% 50%, rgba(31,203,79,.05), transparent 65%),
+        #050505;
       min-height:auto;
     }
-    /* remove grid tecnológico e brilhos */
-    .hero::before{display:none}
 
-    /* wrap sem padding para imagem full-bleed */
+    /* grid técnico sutil — mascara em toda a área de conteúdo */
+    .hero::before{
+      display:block;
+      background-size:44px 44px;
+      mask-image:linear-gradient(180deg,#000 60%,transparent 100%);
+      -webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 100%);
+      opacity:.7;
+    }
+
+    /* wrap sem padding — imagem full-bleed */
     .hero .wrap{padding:0}
 
     /* nav com padding próprio */
     .hero .nav{padding:14px 20px}
 
-    /* grid vira coluna */
+    /* grid: coluna, conteúdo no topo, imagem embaixo */
     .hero-grid{
       display:flex;
       flex-direction:column;
@@ -407,24 +417,26 @@
       padding:0;
     }
 
-    /* imagem hero full-bleed */
-    .hero-img-mobile{
-      display:block;
-      width:100%;
-      height:320px;
-      background:url('assets/bgmobile.png') center top / cover no-repeat;
-      flex-shrink:0;
-    }
-
-    /* conteúdo sobrepõe levemente a imagem */
+    /* área de conteúdo */
     .hero-copy{
-      background:#050505;
-      padding:28px 20px 48px;
-      margin-top:-24px;
-      border-radius:24px 24px 0 0;
+      padding:8px 20px 32px;
       position:relative;
       z-index:2;
       max-width:100%;
+      background:transparent;
+      margin-top:0;
+      border-radius:0;
+    }
+
+    /* imagem abaixo, fade no topo para integrar ao fundo */
+    .hero-img-mobile{
+      display:block;
+      width:100%;
+      height:300px;
+      background:url('assets/bgmobile.png') center center / cover no-repeat;
+      flex-shrink:0;
+      -webkit-mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.6) 18%, #000 45%);
+      mask-image:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.6) 18%, #000 45%);
     }
 
     .hero h1{font-size:38px;line-height:1.05}
@@ -432,7 +444,7 @@
     .cta-row{flex-direction:column;gap:10px}
     .cta-row .btn{width:100%;justify-content:center}
     .badges{gap:8px}
-    .badge{font-size:12px;padding:6px 10px}
+    .badge{font-size:12px;padding:6px 10px;background:rgba(255,255,255,.06)}
     .eyebrow{font-size:12px}
   }
 
@@ -483,7 +495,6 @@
     </header>
 
     <div class="hero-grid">
-      <div class="hero-img-mobile" aria-hidden="true"></div>
       <div class="hero-copy">
         <span class="eyebrow"><span class="spark"></span> Pagamento em 10× sem juros</span>
         <h1>
@@ -523,6 +534,7 @@
         </div>
       </div>
 
+      <div class="hero-img-mobile" aria-hidden="true"></div>
     </div>
   </div>
 </section>
